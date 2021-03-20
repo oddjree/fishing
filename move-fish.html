@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>this fish will move!</title>
+	<style>
+		body {
+			background-color: black;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+		let allFish = new Array (
+			'fish1.gif',
+			'fish2.gif',
+			'fish3.gif',
+			'fish4.gif',
+			'fish5.gif',
+			)
+
+		function createFish() {
+			const img = document.createElement('img')
+			img.src = 'fish1.gif'
+			img.className = 'fish'
+			img.style.position = 'absolute'
+			img.style.width = '100px'
+			const x = Math.random() * window.innerWidth / 2
+			const y = Math.random() * window.innerHeight / 2
+			img.style.left = `${x}px`
+			img.style.top = `${y}px`
+			img.dataset.dx = Math.random() * 4 - 2
+			img.dataset.dy = Math.random() * 4 - 2
+			return img
+		}
+
+		for (let i = 0; i < 10; i++) {
+			const fish = createFish()
+			document.body.appendChild(fish)
+		}
+
+		function draw() {
+			requestAnimationFrame(draw)
+
+			const fishes = document.querySelectorAll('.fish')
+			fishes.forEach(img => {
+				let x = parseFloat(img.style.left)
+				let y = parseFloat(img.style.top)
+				let w = parseFloat(img.width) + 1
+				let dx = parseFloat(img.dataset.dx)
+				let dy = parseFloat(img.dataset.dy)
+
+				if (x + w >= window.innerWidth) {
+					dx = -dx
+					} else if (x <= 0) {
+						dx = -dx
+					}
+
+					if (y + w >= window.innerHeight) {
+						dy = -dy
+					} else if (y <= 0) {
+						dy = -dy
+					}
+
+					x += dx
+					y += dy 
+
+					img.style.left = `${x}px`
+					img.style.top = `${y}px`
+					img.dataset.dx = dx
+					img.dataset.dy = dy
+				
+				})
+		}
+
+		draw()
+
+		
+	</script>
+</body>
+</html>

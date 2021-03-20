@@ -1,0 +1,91 @@
+<style>
+  body {
+    margin: 0;
+    background-color: #000088;
+  }
+</style>
+
+<body>
+  <!--   BUBBLES WILL GET ADDED HERE -->
+  
+  <script>
+    // this createBubble function is almost identical to the last one
+    // except i've added an additonal className (this will be useful
+    // later when i want to animate my bubbbles) && i've given each a
+    // different random position so they don't all start on the same
+    // spot
+    function createFish() {
+      const img = document.createElement('img')
+      img.src = 'fish1.gif'
+      img.className = 'fish' // giving each bubble the same class name
+      img.style.position = 'absolute'
+      img.style.width = '100px'
+      // creating a random position for each bubble
+      const x = Math.random() * window.innerWidth / 2
+      const y = Math.random() * window.innerHeight / 2
+      img.style.left = `${x}px`
+      img.style.top = `${y}px`
+      // here i've given the bubble a custom piece of data
+      // i'm going to use this to keep track of which direction
+      // the bubble is currently "moving" in
+      img.dataset.dx = Math.random() * 4 - 2 // between 2 or -2
+      img.dataset.dy = Math.random() * 4 - 2 // between 2 or -2
+      return img
+    }
+
+    
+    // instead of creating just a single bubble, this time i'm placing
+    // the same code from the last example inside of a "for loop",
+    // which i've set to run 100 times, essentially adding 100 bubbles
+    // to my body element.
+    for (let i = 0; i < 10; i++) {
+      const fish = createFish()
+      document.body.appendChild(fish)
+    }
+
+    // function is going to be my "animation loop", this is where i'll
+    // update the bubble's css position so that it looks like they're moving
+    function draw() {
+      // the function bellow is used to "recursivly" call our draw
+      // function ~60 times per second, essentially what turns this
+      // function into an "animation loop"
+      requestAnimationFrame(draw)
+      
+      // here i'll create a list of all my bubbles by collecting
+      // every element on my page that has the corresponding class name
+      const fishes = document.querySelectorAll('.fish')
+      fishes.forEach(img => {
+        // here' we'll loop through all the bubbles && change each's posision
+        // the "algorithm" below is a common technique for making it look
+        // like balls are bouncing around the screen
+        let x = parseFloat(img.style.left)
+        let y = parseFloat(img.style.top)
+        let w = parseFloat(img.width) + 1
+        let dx = parseFloat(img.dataset.dx)
+        let dy = parseFloat(img.dataset.dy)
+        // if bubble moves pas the right side of the screen
+        if (x + w >= window.innerWidth) {
+          dx = -dx // invert x direction
+        } else if (x <= 0) { // if it moves past the left side
+          dx = -dx // invert x direction
+        }
+        // if bubble moves past the bottom of the screen 
+        if (y + w >= window.innerHeight) {
+          dy = -dy // invert y direction
+        } else if (y <= 0) { // if it moves past the top
+          dy = -dy // invert y direction
+        }
+        // now let's adjust our x, y by their direction
+        x += dx
+        y += dy
+        // and lastly let's apply these new values to our bubble
+        img.style.left = `${x}px`
+        img.style.top = `${y}px`
+        img.dataset.dx = dx
+        img.dataset.dy = dy
+      })
+    }
+    
+    draw() // start running our animation loop
+  </script>
+</body>

@@ -1,0 +1,38 @@
+<html>
+<style>
+  body {
+    background-color: #000088;
+  }
+</style>
+
+<body>
+  <!--   BUBBLES WILL GET ADDED HERE -->
+  
+  <script>
+    
+    // here i've made a function that dynamically creates an <img>
+    // element, it also gives that element a src attribute <img src="...">
+    // as well as applies some CSS properties to control it's position
+    // on the page. In this way our img element now becomes an "object"
+    // (in the Objected Oriented Programming sense we discussed)
+    function createBubble() {
+      const img = document.createElement('img')
+      img.src = 'https://mario.wiki.gallery/images/7/7a/SMO_8bit_Bubble.png'
+      img.style.position = 'absolute'
+      img.style.left = '50px'
+      img.style.top = '50px'
+      return img
+    }
+
+    
+    // here i'm using the function i created above to creat one of
+    // those img objects, i'm storing it in a variable called bubble
+    const bubble = createBubble()
+    // the bubble object now exist in the comptuers "memory", but if
+    // i want to see the bubble in my scene (ie. on my page) i'm 
+    // going to need to add it somwhere, in this case i'll just add
+    // it to my page's body element
+    document.body.appendChild(bubble)
+  </script>
+</body>
+</html>
