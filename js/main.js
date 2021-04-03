@@ -1,5 +1,4 @@
 createFisherman()
-createWaves()
 
 function setUp() {
 	let splash = document.querySelector('#splash')
@@ -25,5 +24,4 @@ function draw() {
 
 let startGame = document.querySelector('#startGame')
 startGame.addEventListener('click', setUp)
-startGame.style.top = '100px'
 
