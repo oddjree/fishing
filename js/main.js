@@ -3,7 +3,7 @@ createFisherman()
 function setUp() {
 	let splash = document.querySelector('#splash')
 	splash.style.display = 'none'
-	for (let i = 0; i < 4; i++) {
+	for (let i = 0; i < 20; i++) {
 		setTimeout(function(){
 			const fish = createFish()
 			document.body.appendChild(fish)
