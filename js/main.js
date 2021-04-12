@@ -1,3 +1,5 @@
+createMoon()
+
 createFisherman()
 
 function setUp() {
@@ -11,6 +13,7 @@ function setUp() {
 	}
 	music()
 	draw()
+	createFishermanAwake()
 }
 
 

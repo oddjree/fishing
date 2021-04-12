@@ -1,8 +1,8 @@
 function createFisherman(){
 	const fisher = [
-		'images/fisherman1update.gif',
-		'images/fisherman2update.gif',
-		'images/fisherman3update.gif'
+		'images/fisherman1awake.png',
+		'images/fisherman2awake.png',
+		'images/fisherman3awake.png'
 	]
 	const n = Math.floor(Math.random() * fisher.length)
 	let fisherman = document.createElement('img')
