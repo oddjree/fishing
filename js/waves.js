@@ -1,17 +1,13 @@
 
 console.log('hello?')
 function createWaves() {
-	const image = document.createElement('img')
-	image.src = 'images/waves4.gif'
-	image.className = 'wave'
-	image.style.width = '100px'
-	image.style.position = 'absolute'
-	image.style.top = '400px'
+	let wave = document.createElement('img')
+	wave.setAttribute('src', 'images/waves4.gif')
+	wave.className = 'waves'
+	wave.style.width = '100px'
+	wave.style.position = 'absolute'
+	wave.style.top = '400px'
 
-	return image
+	document.body.appendChild(wave)
+
 }
-
-for (let i = 0; i < 10) {
-      const wave = createWaves()
-      document.body.appendChild(wave)
-    }

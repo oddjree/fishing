@@ -8,7 +8,7 @@ function createFisherman(){
 	let fisherman = document.createElement('img')
 	fisherman.setAttribute('src', fisher[n])
 	fisherman.id = 'boat'
-	fisherman.style.width = '450px'
+	fisherman.style.width = '400px'
 	fisherman.style.position = 'absolute'
 	fisherman.style.top = '150px'
 	fisherman.style.left = '25%'

@@ -2,6 +2,8 @@ createMoon()
 
 createFisherman()
 
+//createWaves()
+
 function setUp() {
 	let splash = document.querySelector('#splash')
 	splash.style.display = 'none'
@@ -13,6 +15,7 @@ function setUp() {
 	}
 	music()
 	draw()
+	createFishingPole()
 	createFishermanAwake()
 }
 

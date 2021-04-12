@@ -4,18 +4,57 @@
 	<title>fish test</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<style>
+		.wave1 {
+			width:130px;
+		}
+		.wave2 {
+			width:130px;
+			-webkit-transform: scaleX(-1);
+  			transform: scaleX(-1);
+		}
+		div {
+			position:absolute;
+			top:100px;
+			overflow:hidden;
+			height:120px;
+			z-index:100;
+		}
+	</style>
 </head>
 <body>
 	<section id="splash">
 		<button id="startGame">start</button>
 	</section>
 
+	<div>
+		<img src="images/waves4.gif" class="wave1">
+		<img src="images/waves4.gif" class="wave2">
+		<img src="images/waves4.gif" class="wave1">
+		<img src="images/waves4.gif" class="wave2">
+		<img src="images/waves4.gif" class="wave1">
+		<img src="images/waves4.gif" class="wave2">
+		<img src="images/waves4.gif" class="wave1">
+		<img src="images/waves4.gif" class="wave2">
+		<img src="images/waves4.gif" class="wave1">
+		<img src="images/waves4.gif" class="wave2">
+		<img src="images/waves4.gif" class="wave1">
+		<img src="images/waves4.gif" class="wave2">
+		<img src="images/waves4.gif" class="wave1">
+		<img src="images/waves4.gif" class="wave2">
+		<img src="images/waves4.gif" class="wave1">
+		<img src="images/waves4.gif" class="wave2">
+	</div>
 
+	<script src="js/waves.js"></script>
+	<script src="js/fishingpole.js"></script>
+	<!--<script src="js/fishermanawake.js"></script>-->
 	<script src="js/fisherman.js"></script>
 	<script src="js/moon.js"></script>
 	<script src="js/createfish.js"></script>
 	<script src="js/audio.js"></script>
 	<script src="js/main.js"></script>
 	<!-- main goes last because it uses code from create fish -->
+
 </body>
 </html>

@@ -1,17 +1,17 @@
-function createFisherman(){
+function createFishermanAwake(){
 	const fisher = [
 		'images/fisherman1awake.png',
 		'images/fisherman2awake.png',
 		'images/fisherman3awake.png'
 	]
 	const n = Math.floor(Math.random() * fisher.length)
-	let fisherman = document.createElement('img')
-	fisherman.setAttribute('src', fisher[n])
-	fisherman.id = 'boat'
-	fisherman.style.width = '450px'
-	fisherman.style.position = 'absolute'
-	fisherman.style.top = '150px'
-	fisherman.style.left = '25%'
+	let fishermanA = document.createElement('img')
+	fishermanA.setAttribute('src', fisher[n])
+	fishermanA.id = 'boat'
+	fishermanA.style.width = '450px'
+	fishermanA.style.position = 'absolute'
+	fishermanA.style.top = '150px'
+	fishermanA.style.left = '25%'
 
-	document.body.appendChild(fisherman)
+	document.body.appendChild(fishermanA)
 }
